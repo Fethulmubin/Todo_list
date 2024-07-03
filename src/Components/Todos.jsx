@@ -4,13 +4,13 @@ import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import styles from './Styles.module.css'
 
 export default function 
-Todos({task, complete, deleted}) {
+Todos({task, complete, deleted, editTodo}) {
   return (
     <>
     <div className={styles.todo}>
         <p onClick={()=>complete(task.id)}  className={task.completed ? `${styles.completed }`: `${styles.not_completed}`} >{task.task}</p>
         <div className={styles.operation}>
-            <ModeEditIcon className={styles.edit} />
+            <ModeEditIcon className={styles.edit} onClick={()=> editTodo(task.id)}/>
             <DeleteForeverIcon className={styles.delete} onClick={()=>deleted(task.id)}/>
         </div>
     </div>

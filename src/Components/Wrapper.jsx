@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Todo_form from './Todo_form'
 import Todos from './Todos'
+import Edit_form from './Edit_form'
 
 
 export default function Wrapper 
@@ -18,12 +19,19 @@ export default function Wrapper
     setTodos(todos.filter(todo=> todo.id !== id))
     
   }
+  const editTodo = id=>{
+    setTodos(todos.map(todo => todo.id ===id? {...todo, isEdit: !todo.isEdit}:todo))
+  }
+  const editTask = (task, id)=>{
+    setTodos(todos.map(todo=> todo.id ===id ?{todo, task, isEdit: !todo.isEdit} :todo))
+  }
   // console.log(todos.completed)
   return (
     <>
         <Todo_form addTodo={addTodo} />
         {todos.map((todo, index)=>(
-          <Todos task={todo} key={index} complete={complete} deleted={deleted}/>
+          todo.isEdit ? (<Edit_form editTodo={editTask} task={todo}/>):
+          <Todos task={todo} key={index} complete={complete} deleted={deleted} editTodo={editTodo}/>
         ))}
         
     </>
