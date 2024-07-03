@@ -8,7 +8,9 @@ export default function Todo_form({addTodo}) {
   const [Value, setValue] = useState('')
   const handleSubmit = e =>{
     e.preventDefault();
+    if(Value !== ''){
     addTodo(Value)
+    }
     setValue("")
   }
   return (

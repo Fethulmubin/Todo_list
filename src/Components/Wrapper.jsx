@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Todo_form from './Todo_form'
 import Todos from './Todos'
 import Edit_form from './Edit_form'
+import styles from './Styles.module.css'
 
 
 export default function Wrapper 
@@ -27,13 +28,15 @@ export default function Wrapper
   }
   // console.log(todos.completed)
   return (
-    <>
+    <div className={styles.wrapper}>
+      <h1>My today tasks</h1>
         <Todo_form addTodo={addTodo} />
         {todos.map((todo, index)=>(
-          todo.isEdit ? (<Edit_form editTodo={editTask} task={todo}/>):
+          todo.isEdit ? 
+          (<Edit_form editTodo={editTask} task={todo}/>):
           <Todos task={todo} key={index} complete={complete} deleted={deleted} editTodo={editTodo}/>
         ))}
         
-    </>
+    </div>
   )
 }
