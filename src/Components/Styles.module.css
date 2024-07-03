@@ -1,0 +1,68 @@
+.form {
+    /* height: 50px; */
+    /* justify-content: space-around; */
+}
+
+.add_btn {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    /* font-size: px; */
+    margin-right: 10%;
+    padding: 20px 30px;
+    /* padding-bottom: 0px; */
+    /* text-align: center; */
+    /* font-size: 18px; */
+}
+
+
+.task {
+    width: 70%;
+    margin-left: 10%;
+    align-content: center;
+    height: 50px;
+    background-color: aliceblue;
+    text-align: center;
+    border: 5px;
+    margin-right: 10px;
+}
+@media (width <=1304px) {
+    /* .form{
+        display: inline-block
+    } */
+    .add_btn{
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .task{
+        width: 80%;
+    }
+}
+/* to do styles */
+.todo{
+    display: flex;
+    justify-content: space-around;
+    background-color: burlywood;
+    margin-bottom: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: 10%;
+    align-content: center;
+    /* margin-right: 10px; */
+}
+.completed{
+    text-decoration: line-through;
+    cursor: pointer;
+    
+}
+.not_completed, .delete, .edit{
+    cursor: pointer;
+}
+.operation{
+    margin-top: 15px;
+}
