@@ -8,10 +8,10 @@ Todos({task, complete, deleted, editTodo}) {
   return (
     <>
     <div className={styles.todo}>
-        <p onClick={()=>complete(task.id)}  className={task.completed ? `${styles.completed }`: `${styles.not_completed}`} >{task.task}</p>
+        <p onClick={()=>complete(task._id)}  className={task.isComplete ? `${styles.completed }`: `${styles.not_completed}`} >{task.task}</p>
         <div className={styles.operation}>
-            <ModeEditIcon className={styles.edit} onClick={()=> editTodo(task.id)}/>
-            <DeleteForeverIcon className={styles.delete} onClick={()=>deleted(task.id)}/>
+            <ModeEditIcon className={styles.edit} onClick={()=> editTodo(task._id)}/>
+            <DeleteForeverIcon className={styles.delete} onClick={()=>deleted(task._id)}/>
         </div>
     </div>
     {/* <hr /> */}

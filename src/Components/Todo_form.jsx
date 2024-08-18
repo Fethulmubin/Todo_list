@@ -20,8 +20,6 @@ export default function Todo_form({addTodo}) {
         
         <button className={styles.add_btn} type='submit'>Add Task</button>
         
-      
-        
         </form>
     </div>
   )
